@@ -90,6 +90,18 @@ To contribute, please fork this repository and submit a pull request.
 
 This site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the main branch. The workflow is defined in `.github/workflows/deploy.yml`.
 
+### GitHub Pages Setup
+
+To deploy this site to GitHub Pages:
+
+1. Ensure your repository is set up with GitHub Pages (Settings → Pages → Source: GitHub Actions)
+2. The deployment workflow will automatically trigger on pushes to the `main` branch
+3. Make sure your `baseUrl` in `docusaurus.config.ts` matches your GitHub Pages URL structure
+
+The site will be available at: `https://uzairshaikh346.github.io/book_with_qwen/`
+
+### Manual Deployment
+
 If you want to manually deploy:
 
 ```bash
