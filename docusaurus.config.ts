@@ -94,7 +94,7 @@ const config: Config = {
     navbar: {
       title: 'Physical AI',
       items: [
-        { to: '/docs/intro', label: 'Book', position: 'left' },
+        { to: '/docs/', label: 'Book', position: 'left' },
         { href: 'https://github.com/...', label: 'GitHub', position: 'right' },
       ],
     },
@@ -106,7 +106,7 @@ const config: Config = {
           items: [
             {
               label: 'Introduction',
-              to: '/docs/intro',
+              to: '/docs/',
             },
             {
               label: 'Module 1 - ROS 2',
