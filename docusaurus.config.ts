@@ -116,10 +116,6 @@ const config: Config = {
           title: 'Chapters',
           items: [
             {
-              label: 'Introduction',
-              to: '/docs/',
-            },
-            {
               label: 'Module 1 - ROS 2',
               to: '/docs/module-1-ros2/chapter-1-intro-to-physical-ai',
             },
