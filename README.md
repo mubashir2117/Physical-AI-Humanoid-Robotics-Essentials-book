@@ -107,14 +107,13 @@ To deploy this site to GitHub Pages:
 2. The deployment workflow will automatically trigger on pushes to the `main` branch
 3. Make sure your `baseUrl` in `docusaurus.config.ts` matches your GitHub Pages URL structure
 
-The site will be available at: `https://uzairshaikh346.github.io/book_with_qwen/`
+The site will be available at: `https://uzairshaikh346.github.io/humanoid-robotics/`
 
 ### Manual Deployment
 
 If you want to manually deploy:
-
 ```bash
-GIT_USER=<Your GitHub username> npm run deploy
+GIT_USER=https://github.com/uzairshaikh346 npm run deploy
 ```
 
 If you are using GitHub pages for hosting, this command builds the website and pushes to the `gh-pages` branch.
