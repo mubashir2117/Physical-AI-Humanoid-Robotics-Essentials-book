@@ -17,7 +17,7 @@ export default function ChatbotUI() {
     'What is ROS 2 and how is it used in Physical AI?',
     'What are the benefits of Digital Twin simulation?',
     'Tell me about the NVIDIA Isaac platform',
-    'How do Vision‑Language‑Action systems work in humanoid robotics?',
+    'How do Vision-Language-Action systems work in humanoid robotics?',
     'What is the difference between Gazebo and Unity?'
   ];
 
@@ -31,11 +31,13 @@ export default function ChatbotUI() {
 
   const sendToAPI = async (question) => {
     setIsLoading(true);
+    
     try {
-      const response = await fetch('https://uzairshaikh-agents.hf.space/ask', {
+      const response = await fetch('https://uzairshaikh-agents.hf.space/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           question: question
@@ -43,20 +45,28 @@ export default function ChatbotUI() {
       });
 
       if (!response.ok) {
-        throw new Error('API request failed');
+        const errorText = await response.text();
+        throw new Error(`API Error: ${response.status}`);
       }
 
       const data = await response.json();
+      console.log('API Response:', data);
+
+      // Check if error in response
+      if (data.error) {
+        throw new Error(data.error);
+      }
 
       const botResponse = {
-        text: data.answer || data.response || "Sorry, I couldn't generate an answer.",
+        text: data.answer || "Sorry, I couldn't generate an answer.",
         sender: 'bot'
       };
       setMessages(prev => [...prev, botResponse]);
+      
     } catch (error) {
       console.error('API Error:', error);
       const errorResponse = {
-        text: "Sorry, something went wrong. Please try again.",
+        text: `Error: ${error.message}\n\nPlease make sure the API server is running and try again.`,
         sender: 'bot'
       };
       setMessages(prev => [...prev, errorResponse]);
@@ -115,6 +125,7 @@ export default function ChatbotUI() {
               </svg>
               <div>
                 <span className={styles.headerTitle}>Physical AI Assistant</span>
+                <span className={styles.headerSubtitle}>Humanoid Robotics Expert</span>
               </div>
             </div>
             <div className={styles.headerButtons}>
