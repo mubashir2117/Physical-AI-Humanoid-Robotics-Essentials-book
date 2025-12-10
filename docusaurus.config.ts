@@ -2,24 +2,19 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
-  tagline: 'An Educational Book on Physical AI Using Qwen AI and Spec-Kit Plus',
-  favicon: 'img/favicon.ico',
+  tagline: 'An Educational Book on Physical AI Using Spec-Kit Plus and Qwen AI',
+  favicon: 'img/logo.png',
 
   future: {
     v4: true,
   },
 
-  // 🔥 Your live website domain (GitHub Pages)
   url: 'https://mubashir2117.github.io',
-
-  // 🔥 The folder name of the repo (must match)
   baseUrl: '/Physical-AI-Humanoid-Robotics-Essentials-book/',
 
-  organizationName: 'mubashir2117', 
+  organizationName: 'mubashir2117',
   projectName: 'Physical-AI-Humanoid-Robotics-Essentials-book',
 
   onBrokenLinks: 'throw',
@@ -62,7 +57,6 @@ const config: Config = {
   ],
 
   themes: [],
-
   plugins: [],
 
   themeConfig: {
@@ -79,18 +73,23 @@ const config: Config = {
     ],
 
     navbar: {
-      title: 'Physical AI',
+      title: 'Physical AI TextBook',
+
+      // ✅ LOGO ADDED HERE
+      logo: {
+        alt: 'Physical AI Logo',
+        src: 'img/logo.png',          // Light mode logo
+        srcDark: 'img/logo.png',      // Dark mode logo (same file, optional)
+      },
+
       items: [
         { to: '/docs/', label: 'Book', position: 'left' },
 
-        // 🔥 GitHub button fixed
         { 
           href: 'https://github.com/mubashir2117/Physical-AI-Humanoid-Robotics-Essentials-book', 
           label: 'GitHub', 
           position: 'right' 
         },
-
-        // 🔥 Optional: Your LinkedIn
         { 
           href: 'https://www.linkedin.com/in/mubashir-javaid-175a6728b', 
           label: 'LinkedIn', 
@@ -105,48 +104,27 @@ const config: Config = {
         {
           title: 'Chapters',
           items: [
-            {
-              label: 'Module 1 - ROS 2',
-              to: '/docs/module-1-ros2/chapter-1-intro-to-physical-ai',
-            },
-            {
-              label: 'Module 2 - Digital Twin',
-              to: '/docs/module-2-digital-twin/chapter-6-simulation-intro',
-            },
+            { label: 'Module 1 - ROS 2', to: '/docs/module-1-ros2/chapter-1-intro-to-physical-ai' },
+            { label: 'Module 2 - Digital Twin', to: '/docs/module-2-digital-twin/chapter-6-simulation-intro' },
           ],
         },
         {
           title: 'Resources',
           items: [
-            {
-              label: 'Spec-Kit Plus',
-              href: 'https://github.com/spec-kit-plus',
-            },
-            {
-              label: 'Robot Operating System',
-              href: 'https://docs.ros.org/',
-            },
+            { label: 'Spec-Kit Plus', href: 'https://github.com/spec-kit-plus' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'GitHub Repo',
-              href: 'https://github.com/mubashir2117',
-            },
-            {
-              label: 'Issues',
-              href: 'https://github.com/mubashir2117',
-            },
-            {
-              label: 'Discussions',
-              href: 'https://github.com/mubashir2117',
-            },
+            { label: 'GitHub', href: 'https://github.com/mubashir2117' },
+            { label: 'Instagram', href: 'https://www.instagram.com/mj_mubashir21/' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mubashir-javaid-175a6728b' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics.
+      Made by Mubashir.`,
     },
 
     prism: {
