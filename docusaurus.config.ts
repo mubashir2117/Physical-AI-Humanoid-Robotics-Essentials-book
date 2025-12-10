@@ -12,7 +12,7 @@ const config: Config = {
   },
 
   url: 'https://mubashir2117.github.io',
-  baseUrl: '/Physical-AI-Humanoid-Robotics-Essentials-book/',
+  baseUrl: '/',
 
   organizationName: 'mubashir2117',
   projectName: 'Physical-AI-Humanoid-Robotics-Essentials-book',
