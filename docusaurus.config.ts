@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -9,23 +9,21 @@ const config: Config = {
   tagline: 'An Educational Book on Physical AI Using Qwen AI and Spec-Kit Plus',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://uzairshaikh346.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/humanoid-robotics/',
+  // 🔥 Your live website domain (GitHub Pages)
+  url: 'https://mubashir2117.github.io',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'uzairshaikh346', // Usually your GitHub org/user name.
-  projectName: 'book_with_qwen', // Usually your repo name.
+  // 🔥 The folder name of the repo (must match)
+  baseUrl: '/Physical-AI-Humanoid-Robotics-Essentials-book/',
+
+  organizationName: 'mubashir2117', 
+  projectName: 'Physical-AI-Humanoid-Robotics-Essentials-book',
 
   onBrokenLinks: 'throw',
+
   markdown: {
     format: 'detect',
     mermaid: false,
@@ -39,9 +37,6 @@ const config: Config = {
     },
   },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -53,62 +48,57 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // Keep docs at /docs route
           routeBasePath: '/docs',
-          // Enable prev/next navigation
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
           lastVersion: 'current',
-          // Performance optimizations
-          remarkPlugins: [
-            // Add plugins for performance if needed
-          ],
-          rehypePlugins: [
-            // Add plugins for performance if needed
-          ],
         },
-        blog: false, // Disable blog for this project
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
-  // Performance optimizations
-  themes: [
-    // Add any additional themes if needed
-  ],
-  plugins: [
-    // Additional performance optimizations
-  ],
+
+  themes: [],
+
+  plugins: [],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: true, // Only dark mode
+      disableSwitch: true,
     },
-    // Accessibility improvements
+
     metadata: [
-      {name: 'keywords', content: 'robotics, AI, physical AI, ROS, simulation, Isaac Sim, navigation, machine learning'},
-      {name: 'author', content: 'Physical AI Educational Project'},
-      {name: 'theme-color', content: '#0F172A'},
+      { name: 'keywords', content: 'robotics, AI, physical AI, ROS, simulation, Isaac Sim, navigation, machine learning' },
+      { name: 'author', content: 'Physical AI Educational Project' },
+      { name: 'theme-color', content: '#0F172A' },
     ],
-    // Custom fonts configuration
-    fonts: {
-      font: ['Inter', 'sans-serif'],
-      monospace: ['JetBrains Mono', 'Consolas', 'monospace'],
-    },
+
     navbar: {
       title: 'Physical AI',
       items: [
         { to: '/docs/', label: 'Book', position: 'left' },
-        { href: 'https://github.com/...', label: 'GitHub', position: 'right' },
+
+        // 🔥 GitHub button fixed
+        { 
+          href: 'https://github.com/mubashir2117/Physical-AI-Humanoid-Robotics-Essentials-book', 
+          label: 'GitHub', 
+          position: 'right' 
+        },
+
+        // 🔥 Optional: Your LinkedIn
+        { 
+          href: 'https://www.linkedin.com/in/mubashir-javaid-175a6728b', 
+          label: 'LinkedIn', 
+          position: 'right' 
+        },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
@@ -129,10 +119,6 @@ const config: Config = {
           title: 'Resources',
           items: [
             {
-              label: 'Qwen AI',
-              href: 'https://qwen.ai',
-            },
-            {
               label: 'Spec-Kit Plus',
               href: 'https://github.com/spec-kit-plus',
             },
@@ -146,22 +132,23 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/uzairshaikh346/humanoid-robotics',
+              label: 'GitHub Repo',
+              href: 'https://github.com/mubashir2117',
             },
             {
               label: 'Issues',
-              href: 'https://github.com/uzairshaikh346/humanoid-robotics/issues',
+              href: 'https://github.com/mubashir2117',
             },
             {
               label: 'Discussions',
-              href: 'https://github.com/uzairshaikh346/humanoid-robotics/discussions',
+              href: 'https://github.com/mubashir2117',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built with Docusaurus using Spec-Kit Plus methodology and Qwen AI.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics.`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

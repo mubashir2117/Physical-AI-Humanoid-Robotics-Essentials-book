@@ -64,7 +64,7 @@ function About() {
               <li>Translations to other languages</li>
             </ul>
             <p>
-              To contribute, please visit our <a href="https://github.com/your-username/book_with_qwen">GitHub repository</a>.
+              To contribute, please visit our <a href="https://github.com/mubashir2117">GitHub repository</a>.
             </p>
           </div>
         </div>

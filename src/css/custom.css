@@ -1,141 +1,95 @@
 :root {
-  --ifm-background-color: #0F172A;
-  --ifm-background-surface-color: #1E293B;
-  --ifm-color-primary: #3B82F6;
-  --ifm-color-primary-dark: #2563EB;
-  --ifm-color-primary-light: #60A5FA;
-  --ifm-font-color-base: #F8FAFC;
-  --ifm-heading-color: #F8FAFC;
-  --ifm-code-background: #1E293B;
+  /* Core background layers */
+  --ifm-background-color: #0B1220;          /* Deep navy */
+  --ifm-background-surface-color: #141B2E;   /* Soft navy surface */
+  --ifm-background-elevated: #1C253A;        /* Slight elevation for cards */
 
-  /* Additional dark theme colors for accessibility */
+  /* Primary accent blue */
+  --ifm-color-primary: #3A8BFF;
+  --ifm-color-primary-dark: #1F66D8;
+  --ifm-color-primary-light: #73AEFF;
+
+  /* Typography */
+  --ifm-font-color-base: #E9EDF7;
+  --ifm-heading-color: #FFFFFF;
+
+  /* Code blocks */
+  --ifm-code-background: #1A2336;
+  --ifm-code-color: #E9EDF7;
+
+  /* Secondary UI colors */
   --ifm-color-secondary: #64748B;
-  --ifm-color-success: #10B981;
-  --ifm-color-info: #0EA5E9;
-  --ifm-color-warning: #F59E0B;
-  --ifm-color-danger: #EF4444;
-  --ifm-breadcrumb-color-active: #F8FAFC;
-  --ifm-code-color: #F8FAFC;
-  --ifm-table-cell-background: #1E293B;
-  --ifm-table-header-background: #0F172A;
-  --ifm-table-border-color: #334155;
+  --ifm-color-success: #18C97A;
+  --ifm-color-info: #38BDF8;
+  --ifm-color-warning: #FBBF24;
+  --ifm-color-danger: #F43F5E;
+
+  /* Table styling */
+  --ifm-table-cell-background: #1A2336;
+  --ifm-table-header-background: #111827;
+  --ifm-table-border-color: #2C354A;
+
+  --ifm-breadcrumb-color-active: #FFFFFF;
 }
 
-/* Responsive design for code blocks */
+/* Smooth UI transitions */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Code blocks */
 .prism-code {
   overflow-x: auto;
   max-width: 100%;
   font-size: 0.9rem;
+  background: var(--ifm-code-background) !important;
+  border-radius: 8px;
+  padding: 1rem;
 }
 
-/* Responsive design for diagrams */
-.md\:overflow-x-auto {
-  overflow-x: auto;
-}
-
-/* Responsive design for images and diagrams */
+/* Images, diagrams */
 article img,
 article svg {
   max-width: 100%;
   height: auto;
 }
 
-/* Responsive tables */
-.table-wrapper {
-  overflow-x: auto;
-  width: 100%;
-}
-
-/* Mobile-friendly navigation */
-@media (max-width: 996px) {
-  .navbar-sidebar .navbar-sidebar__item {
-    padding: 0.5rem;
-  }
-
-  .menu__list-item {
-    margin: 0.25rem 0;
-  }
-
-  .prism-code {
-    font-size: 0.8rem;
-  }
-
-  /* Responsive sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    z-index: 101;
-    padding-top: var(--ifm-navbar-height);
-    transition: var(--ifm-transition-fast) ease;
-    width: var(--doc-sidebar-width);
-  }
-
-  .sidebar.show {
-    left: 0;
-  }
-
-  .sidebar .menu {
-    padding-right: 0;
-  }
-
-  .docSidebarContainer {
-    display: block;
-    width: var(--doc-sidebar-width);
-  }
-
-  .docMainContainer {
-    flex: 1;
-  }
-
-  .docItemWrapper {
-    padding: 0 0.5rem;
-  }
-}
-
-/* Ensure all admonitions (info, tip, caution, danger) follow the dark theme */
-.admonition {
-  border-left: 4px solid;
-  background-color: var(--ifm-background-surface-color);
-  color: var(--ifm-font-color-base);
-}
-
-.admonition--note {
-  border-left-color: var(--ifm-color-info);
-}
-
-.admonition--tip {
-  border-left-color: var(--ifm-color-success);
-}
-
-.admonition--caution {
-  border-left-color: var(--ifm-color-warning);
-}
-
-.admonition--danger {
-  border-left-color: var(--ifm-color-danger);
-}
-
-/* Table styling for dark theme */
+/* Tables */
 .table-wrapper table {
   border: 1px solid var(--ifm-table-border-color);
-}
-
-.table-wrapper table th,
-.table-wrapper table td {
-  border: 1px solid var(--ifm-table-border-color);
-  color: var(--ifm-font-color-base);
-  background-color: var(--ifm-table-cell-background);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .table-wrapper table th {
   background-color: var(--ifm-table-header-background);
+  color: var(--ifm-font-color-base);
 }
 
-/* Link styling for better contrast */
+.table-wrapper table td {
+  background-color: var(--ifm-table-cell-background);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+/* Admonitions */
+.admonition {
+  border-left: 4px solid;
+  background-color: var(--ifm-background-elevated);
+  color: var(--ifm-font-color-base);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.admonition--note { border-left-color: var(--ifm-color-info); }
+.admonition--tip { border-left-color: var(--ifm-color-success); }
+.admonition--caution { border-left-color: var(--ifm-color-warning); }
+.admonition--danger { border-left-color: var(--ifm-color-danger); }
+
+/* Links */
 a {
   color: var(--ifm-color-primary-light);
+  font-weight: 500;
 }
 
 a:hover {
@@ -143,7 +97,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Breadcrumb styling */
+/* Breadcrumb */
 .breadcrumb__link {
   color: var(--ifm-font-color-base);
 }
@@ -152,17 +106,40 @@ a:hover {
   color: var(--ifm-breadcrumb-color-active);
 }
 
-/* For very small screens */
+/* Navbar + shadow */
+.navbar {
+  background-color: #0D1528 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Sidebar styling */
+.menu {
+  background-color: var(--ifm-background-surface-color) !important;
+}
+
+.menu__link {
+  color: #C7D2E4 !important;
+}
+
+.menu__link:hover {
+  background-color: rgba(255,255,255,0.05);
+  color: #FFFFFF !important;
+}
+
+.menu__link--active {
+  color: var(--ifm-color-primary-light) !important;
+  background-color: rgba(58,139,255,0.1);
+}
+
+/* Mobile */
+@media (max-width: 996px) {
+  .prism-code { font-size: 0.8rem; }
+  .navbar-sidebar .navbar-sidebar__item { padding: 0.5rem; }
+  .menu__list-item { margin: 0.25rem 0; }
+}
+
+/* Small screens */
 @media (max-width: 320px) {
-  .container {
-    padding: 0 1rem;
-  }
-
-  .prism-code {
-    font-size: 0.75rem;
-  }
-
-  .docItemWrapper {
-    padding: 0 0.25rem;
-  }
+  .prism-code { font-size: 0.75rem; }
+  .container { padding: 0 1rem; }
 }
